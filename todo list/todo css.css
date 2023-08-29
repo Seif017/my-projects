@@ -1,0 +1,204 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+
+
+
+
+
+
+*{
+    transition: .5s ease;
+
+}
+body{
+    font-size: 18px;
+    background: hsl(235, 21%, 11%);
+
+}
+
+
+#section1{
+    background: url('bg-desktop-dark.jpg') no-repeat;
+    transition: .5s ease;
+   
+}
+
+.lightbackground{
+    background: url('bg-desktop-light.jpg') no-repeat !important;
+    transition: .5s ease;
+}
+
+#section1 h1{
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 100;
+    letter-spacing: 0.8rem;
+
+
+    
+}
+
+.main{
+    margin-left: 23%;
+    margin-bottom: 3%;
+    display: flex;
+    justify-content: space-between;
+    transition: .5s ease;
+   
+
+}
+
+.main img{
+    width: 40px;
+    margin: auto;
+}
+
+
+#section1 input{
+    width: 55%;
+    background:  hsl(235, 24%, 19%);
+    border: none;
+    margin: auto;
+    color: white;
+    height: 55px;
+
+
+}
+
+
+#list li{
+    background:  hsl(235, 24%, 19%);
+    color: white;
+    width: 55%;
+    margin: auto;
+    display: flex;
+    cursor: pointer;
+    box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  
+}
+
+img{
+    cursor: pointer;
+}
+
+
+#list{
+    margin-top: -7%;
+
+    
+}
+    
+.hidden{
+    display: none;
+}
+
+.check{
+    margin-right: 30px;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background: transparent;
+    border-color:  hsl(234, 39%, 85%);
+    cursor: pointer;
+    
+}
+
+
+
+
+.clicked{
+    margin-right: 30px;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    border-color:  hsl(234, 39%, 85%);
+    background:  url('icon-check.svg'), linear-gradient(hsl(192, 100%, 67%) , hsl(280, 87%, 65%))  ;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    
+}
+
+
+
+.remove{
+    margin-left: auto;
+    height: 80%;
+    width: 5%;
+}
+
+
+li:hover img{
+    display: block;
+}
+
+
+.info{
+    background:  hsl(235, 24%, 19%);
+    color: hsl(234, 11%, 52%);
+    width: 55%;
+    margin: auto;
+    font-size: 80%;
+    display: flex;
+    height: 8vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    
+}
+
+.info button{
+    border: none;
+    outline: none;
+    background: transparent;
+    color: hsl(234, 11%, 52%);
+    cursor: pointer;
+    font-size: 100%;
+}
+
+.info button:hover{
+    color: white;
+    
+
+}
+
+.all{
+    color:hsl(220, 98%, 61%) 
+;
+}
+
+
+
+.info p{
+    margin: auto;
+    margin-right: auto;
+}
+
+.clear-completed{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+
+
+
+@media (width <= 500px){
+    ul{
+        width: 170%;
+        position: relative;
+        left: -35%;
+        
+    }
+
+    .info{
+        width: 93%;
+        position: relative;
+        left: 0;
+
+    }
+}

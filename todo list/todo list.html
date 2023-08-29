@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>todo list</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="todo css.css">
+
+</head>
+<body>
+    <div class="jumbotron jumbotron-fluid" id="section1">
+        <div class="container">
+            <div class="main">
+                <h1>TODO</h1>
+                <img src="icon-sun.svg" class="sun" alt="sun icon">
+                <img src="icon-moon.svg" class="moon hidden" alt="moon icon">
+
+
+            </div>
+          
+          <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Create a new todo...">
+
+        </div>
+      </div>
+
+    <div class="container">
+        <ul class="list-group" id="list">
+            <li class="list-group-item" ><button class="check" ></button>Complete online JavaScript course<img class="remove hidden" src="icon-cross.svg"></li>
+            <li class="list-group-item" ><button class="check"></button>Jog around the park 3x<img class="remove hidden" src="icon-cross.svg"></li>
+            <li class="list-group-item"><button class="check"></button>10 minutes meditation<img class="remove hidden" src="icon-cross.svg"></li>
+            <li class="list-group-item"><button class="check"></button>Read for 1 hour<img class="remove hidden" src="icon-cross.svg"></li>
+            <li class="list-group-item"><button class="check"></button>Pick up groceries<img class="remove hidden" src="icon-cross.svg"></li>
+            <li class="list-group-item"><button class="check"></button>Complete Todo App on Frontend Mentor<img class="remove hidden" src="icon-cross.svg"></li>
+          </ul>
+          <div class="info">
+            <p><span id="completed-tasks"> </span> items left</p>
+            <button class="all">All</button>
+            <button class="active">Active</button>
+            <button class="completed-btn">Completed</button>
+            <button class="clear-completed">Clear Completed</button>
+
+          </div>
+
+          
+    </div>
+   
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+
+        //input field
+        var left = 6 
+        $('input').on('keypress', function (e) {
+         if(e.which === 13){
+            $('ul').append(' <li class="list-group-item"><button class="check" ></button>' + $('input').val() + '<img class="remove hidden"  src="icon-cross.svg"></li>')
+            $('input').val('')
+            left+=1
+            $('#completed-tasks').text(left)
+
+            $(this).removeAttr("disabled");
+
+            
+            if (light == true){
+              $('#list li').css('background','white')
+              $('#list li').css('color','black')
+            }
+
+            $('.check').each( function(){
+            var counter = 0; 
+            $( this ).click( function(){
+              counter++;
+              if(counter %2 != 0){
+                $(this).addClass('clicked')
+                $(this).closest('li').css('text-decoration','line-through');
+                $(this).closest('li').css('color','hsl(234, 11%, 52%)');
+                $('#completed-tasks').text(left)
+         
+              }
+              else{
+                $(this).removeClass('clicked');
+                $(this).closest('li').css('text-decoration','none');
+                $(this).closest('li').css('color','white');
+                if(light == true){
+                $(this).closest('li').css('color','black');
+              }
+              }
+
+                  } )
+                } )
+
+
+
+      
+         }
+   })
+
+
+var light;
+    //light mode
+   $(".sun").click(function(){
+    light = true;
+    $('input').css('color','black')
+    $('.sun').addClass('hidden');
+    $(".moon").removeClass("hidden");
+    $("#section1").addClass('lightbackground')
+    $('#list li').css('background','white')
+    $('#list li').css('color','black')
+    $('body').css('background','hsl(0, 0%, 98%)')
+    $('input').css('background','white')
+    $('.info').css('background','white')
+    $("body").css('transition','.5s ')
+    
+   })
+
+   //dark mode
+   $('.moon').click(function(){
+    light = false
+    $('.moon').addClass('hidden');
+    $('.sun').removeClass('hidden')
+    $("#section1").removeClass('lightbackground')
+    $('#list li').css('background',' hsl(235, 24%, 19%)')
+    $('#list li').css('color','white')
+    $('body').css('background','hsl(235, 21%, 11%)')
+    $('input').css('background','hsl(235, 24%, 19%)')
+    $('.info').css('background','hsl(235, 24%, 19%)')
+
+
+   })
+
+
+   $('.check').each( function(){
+  var counter = 0; 
+  $( this ).click( function(){
+    counter++;
+    if(counter %2 != 0){
+      $(this).addClass('clicked')
+      $(this).closest('li').css('text-decoration','line-through');
+      $(this).closest('li').css('color','hsl(234, 11%, 52%)');
+      left-=1
+      $('#completed-tasks').text(left)
+
+    }
+    else{
+      $(this).removeClass('clicked');
+      $(this).closest('li').css('text-decoration','none');
+      $(this).closest('li').css('color','white');
+      if(light == true){
+        $(this).closest('li').css('color','black');
+      }
+        left+=1
+      $('#completed-tasks').text(left)
+
+
+    }
+
+  } );
+
+} )
+
+
+
+
+ $(".remove").click(function(){
+  $(this).closest('li').remove()
+    left-=1
+    $('#completed-tasks').text(left)
+    
+
+ 
+ })
+
+
+
+
+$('#completed-tasks').text(left)
+
+
+
+$(".all").click(function(){
+  $(".check").each(function(){
+    $(this).closest('li').css('display','block')
+
+   
+      $(".info button").css('color','hsl(234, 11%, 52%)')
+      $(".all").css('color','hsl(220, 98%, 61%)')
+
+
+    
+  })
+})
+
+
+$(".completed-btn").click(function(){
+  $(".check").each(function(){
+    if ( $(this).hasClass('clicked') == false){
+      $(this).closest('li').css('display','none')
+      $(".info button").css('color','hsl(234, 11%, 52%)')
+      $(".completed-btn").css('color','hsl(220, 98%, 61%)')
+
+
+    }
+  })
+})
+
+
+$(".active").click(function(){
+  $(".check").each(function(){
+    if ( $(this).hasClass('clicked') == false){
+      $(this).closest('li').removeClass('hidden')}
+
+    else{
+      $(this).closest('li').css('display','none')
+    }
+      $(".info button").css('color','hsl(234, 11%, 52%)')
+      $(".active").css('color','hsl(220, 98%, 61%)')
+
+    
+  })
+})
+
+
+$(".clear-completed").click(function(){
+  $(".check").each(function(){
+    if ( $(this).hasClass('clicked')){
+      $(this).closest('li').remove()
+      $(".info button").css('color','hsl(234, 11%, 52%)')
+      $(".clear-completed").css('color','hsl(220, 98%, 61%)')
+
+
+    }
+  })
+})
+
+    </script>
+    
+
+</body>
+
+
+</html>
