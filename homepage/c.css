@@ -1,0 +1,138 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap');
+
+
+body{
+    font-size: 15px;
+    margin-bottom: 50px;
+}
+
+*{
+    transition: .5s ease;
+
+}
+
+.navbar-nav{
+    margin-left: auto;
+    gap: 2rem;
+   
+}
+
+.nav-item a:hover{
+    color: hsl(5, 85%, 63%) !important;
+    transition: .5s ease;
+}
+
+#brand_name{
+    font-size: 40px;
+    
+}
+
+#nav{
+    background: white !important;
+}
+
+#section1{
+    width: 98%;
+    height: 60%;
+
+}
+
+#title{
+    margin-top: 20px;
+    width: 80%;
+    font-size: 40px;
+    font-family: 'Inter', sans-serif;
+    
+}
+
+#paragraph{
+    margin-top: 20px;
+    color: hsl(236, 13%, 42%);
+}
+
+p{
+    color:hsl(233, 8%, 79%);
+
+    
+}
+
+h2{
+    color: hsl(35, 77%, 62%);
+    margin-bottom: 30px;
+}
+
+#section2{
+    background: hsl(240, 100%, 5%);
+    color: hsl(36, 100%, 99%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    
+    
+}
+
+#section2 h5:hover{
+    color: hsl(35, 77%, 62%);
+    cursor: pointer;
+
+}
+
+.btn_readmore{
+    width: 50%;
+    height: 25%;
+    color:  hsl(36, 100%, 99%);
+    background: hsl(5, 85%, 63%);
+    border: none;
+}
+
+.btn_readmore:hover{
+    background:  hsl(240, 100%, 5%);
+    cursor: pointer;
+}
+
+#bar{
+    background:  hsl(233, 8%, 79%);
+}
+
+
+.content2{
+    margin-top: 50px;
+}
+
+#retro img{
+    width: 40%;
+}
+
+#retro{
+    display: flex;
+}
+
+#retro span{
+    color: hsl(233, 8%, 79%);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 250%;
+}
+
+#retro p{
+    color:  hsl(236, 13%, 42%);
+}
+
+#retro h5{
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+.c{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.c h5:hover{
+    color:hsl(5, 85%, 63%);
+    cursor: pointer;
+}
